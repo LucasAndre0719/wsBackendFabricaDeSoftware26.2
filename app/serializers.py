@@ -17,4 +17,11 @@ class AvaliacaoSerializers(serializers.ModelSerializer):
         model = Avaliacao
         fields = '__all__'
 
-        
+
+class FilmeExternoSerializers(serializers.Serializer):
+    id = serializers.IntegerField()
+    titulo = serializers.CharField()
+    diretor = serializers.CharField()
+    produtor = serializers.CharField()
+    lancamento=serializers.DateField()
+    sinopse = serializers.CharField()
