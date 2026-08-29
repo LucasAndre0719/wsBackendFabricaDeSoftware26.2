@@ -54,7 +54,7 @@ REST_FRAMEWORK = {
 
 SPECTACULAR_SETTINGS = {
     'TITLE': 'CineHub',
-    'DESCRIPTION': 'Your project description',
+    'DESCRIPTION': 'API para gerenciamento de filmes e avaliações',
     'VERSION': '1.0.0',
     'SERVE_INCLUDE_SCHEMA': False,
 }
