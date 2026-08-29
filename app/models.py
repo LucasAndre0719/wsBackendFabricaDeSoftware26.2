@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.core.validators import MaxValueValidator, MinValueValidator
 
 
 class Genero (models.Model):
@@ -24,7 +25,10 @@ class Filme(models.Model):
         return self.titulo
 
 class Avaliacao(models.Model):
-    nota = models.FloatField()
+    nota = models.FloatField(validators=[
+        MinValueValidator(0),
+        MaxValueValidator(10),
+        ])
     comentario = models.TextField(blank=True)
     usuario = models.ForeignKey(
         User,
@@ -39,5 +43,5 @@ class Avaliacao(models.Model):
     )
 
     def  __str__(self):
-        return f'{self.filme.titulo} - {self.nome}/10'
+        return f'{self.filme.titulo} - {self.nota}/10'
 
